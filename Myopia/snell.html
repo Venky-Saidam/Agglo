@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNL</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#prt {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+}
+
+#check {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+
+#req {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-radius: 8px;
+    margin: 10px;
+    outline: none;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0056b3, #003580);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+@media (max-width: 600px) {
+    #prt {
+        width: 95%;
+        padding: 20px;
+    }
+
+    #check {
+        font-size: 32px;
+    }
+
+    button {
+        width: 80%;
+    }
+}
+
+    </style>
+    
+</head>
+<body>
+    <div id="prt">
+        <div id="focus">
+            
+                <p id="check" >H V Z D S</p>
+            <p id="req">Please place your device five feet away from you for increased accuracy in results!</p>
+            <button id="vis" onclick="yes()">Yeah! Visible</button>
+            <button id ="nvis" onclick="no()">Not Clear</button>
+        </div>
+       
+    </div>
+    <script src="snell.js"></script>
+</body>
+</html>

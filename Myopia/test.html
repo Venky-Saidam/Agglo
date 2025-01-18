@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Your Eyes</title>
+    <style>
+     
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #007bff;
+    margin-top: 50px;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+
+#parent {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+
+button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+
+button:hover {
+    background: linear-gradient(135deg, #0056b3, #003580);
+    transform: scale(1.08);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+@media (max-width: 600px) {
+    #parent {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    button {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Test Your Eyes</h1>
+   
+  <div id="parent">
+     
+       <button id="SS" onclick="window.location.href='snell.html'">Snell</button>
+     
+    
+       <button id="AA" onclick="window.location.href='astig.html'">Asti</button>
+     
+     
+       <button id="BB" onclick="window.location.href='blur.html'"> Blur</button>
+    
+
+    </div>
+
+    <script src="testwork.js"></script>
+   
+
+    
+</body>
+</html>

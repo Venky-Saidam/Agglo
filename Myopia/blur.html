@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Div</title>
+  <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: #f4f4f4;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        width: 90%;
+        overflow: hidden;
+        transition: 0.3s ease-in-out;
+    }
+    
+  
+    #bltxt {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        filter: blur(3px);
+        margin-bottom: 20px;
+    }
+    
+  
+    #user-input {
+        width: 80%;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        text-align: center;
+        margin-bottom: 15px;
+        outline: none;
+        transition: 0.3s;
+    }
+    
+  
+    #user-input:focus {
+        border-color: #007bff;
+        box-shadow: 0px 3px 8px rgba(0, 123, 255, 0.3);
+    }
+    
+    #sbm {
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 8px;
+        margin-top: 10px;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+   
+    #sbm:hover {
+        background: linear-gradient(135deg, #0056b3, #003580);
+        transform: scale(1.05);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    #message {
+        font-size: 16px;
+        color: #444;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+    
+   
+    #blor {
+        width: 100%;
+        max-height: 300px; 
+        object-fit: cover; 
+        border-radius: 12px;
+        margin-top: 20px;
+        filter: blur(5px); 
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, filter 0.3s;
+    }
+    
+    #blor:hover {
+        transform: scale(1.05);
+        filter: blur(3px); 
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    }
+   
+    @media (max-width: 600px) {
+        .container {
+            width: 95%;
+            padding: 20px;
+        }
+    
+        #user-input {
+            width: 90%;
+        }
+    
+        #sbm {
+            width: 85%;
+        }
+    
+        #blor {
+            max-height: 200px; 
+        }
+    }
+    </style>
+    
+</head>
+<body>
+<script src="blur.js"></script>
+  <div class="container">
+   
+    <div class="gg">
+        <p id="bltxt">Blurred</p>
+        <input type="text" id="user-input" placeholder="Enter text here" />
+        <button  id ="sbm" onclick="checkInput()">Submit</button>
+        <p id="message"></p>
+       
+      </div>
+    
+    <img id ="blor" src="">
+  </div>
+
+</body>
+</html>

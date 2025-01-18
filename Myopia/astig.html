@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astigmatism</title>
+  <style>
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+}
+
+
+#dot {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+
+#ques {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-radius: 8px;
+    margin: 10px;
+    outline: none;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+button:hover {
+    background: linear-gradient(135deg, #0056b3, #003580);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+#result {
+    font-size: 16px;
+    color: #444;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    button {
+        width: 80%;
+    }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <img id="dot" src="grid.jpg">
+   
+    <p id="ques">Do you find that the lines, squares are straight?</p>
+    <button id="yes">YES</button>
+    <button id="no">NO</button>
+    <p id="result"></p>
+  </div>
+
+  <script src="astig.js"></script>
+</body>
+</html>

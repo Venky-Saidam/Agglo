@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myopia</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Myopia</h1>
+
+    <nav>
+        <ul>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="test.html">Test</a></li>
+            <li><a href="activity.html">Activity</a></li>
+            <li><a href="history.html">History</a></li>
+            <li class="logout"><button id="logout">Log out</button></li> 
+        </ul>
+    </nav>
+
+    <section class="content">
+        <h2>What is Myopia?</h2>
+        <p>Myopia, or nearsightedness, is a common vision condition where distant objects appear blurry while close objects remain clear. It occurs when the eye is too long or the cornea is too curved, causing light to focus in front of the retina.</p>
+
+        <h2>Causes</h2>
+        <ul>
+            <li>Genetics (runs in families)</li>
+            <li>Excessive screen time and near work (reading, phone use)</li>
+            <li>Lack of outdoor activities</li>
+        </ul>
+
+        <h2>Symptoms</h2>
+        <ul>
+            <li>Blurry vision when looking at distant objects</li>
+            <li>Squinting to see clearly</li>
+            <li>Eye strain and headaches</li>
+            <li>Difficulty driving at night</li>
+        </ul>
+
+        <h2>Treatment & Prevention</h2>
+        <ul>
+            <li><strong>Eyeglasses or Contact Lenses:</strong> Corrects vision immediately</li>
+            <li><strong>Orthokeratology (Ortho-K):</strong> Special contact lenses reshape the cornea overnight</li>
+            <li><strong>Laser Surgery (LASIK, PRK):</strong> Permanent correction for eligible candidates</li>
+            <li><strong>Lifestyle Changes:</strong> More outdoor time, reducing screen exposure, taking breaks while reading</li>
+        </ul>
+
+        <h2>Interesting Fact</h2>
+        <p>Spending at least <strong>2 hours outdoors daily</strong> can help slow the progression of myopia in children!</p>
+    </section>
+
+    <script type="module">
+        // Import Firebase SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+
+     
+
+        const firebaseConfig = {
+         apiKey: "AIzaSyAZrtQjAqsB79zuXkzv21FqI_gWBn87hYA",
+         authDomain: "myopia-3f3f9.firebaseapp.com",
+         projectId: "myopia-3f3f9",
+         storageBucket: "myopia-3f3f9.appspot.app",
+         messagingSenderId: "855230834825",
+         appId: "1:855230834825:web:e3109a8930528328c73e58"
+        };
+
+
+    
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = 'signup.html'; 
+            }
+        });
+r
+        document.getElementById("logout").addEventListener("click", async () => {
+          localStorage.removeItem('loggedInUserId');
+          signOut(auth)
+          .then(()=>{
+            window.location.href = 'signup.html';
+          })
+          .catch((error)=>{
+            console.error('Error logging out' , error)
+          })
+        });
+    </script>
+</body>
+</html>

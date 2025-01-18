@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifestyle Data Collection</title>
+    <style>
+body, h1, form, input, select, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    margin: 1rem auto;
+}
+
+
+form label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+form input:focus, form select:focus {
+    border-color: #3498db;
+}
+
+
+form button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+    form {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Lifestyle Data Collection</h1>
+    <form id="lifestyle-form">
+        <label for="screen-time">Daily Screen Time (hours):</label>
+        <input type="number" id="screen-time" name="screen-time" min="0" step="0.1" required>
+        <br><br>
+
+        <label for="outdoor-time">Outdoor Activity (hours):</label>
+        <input type="number" id="outdoor-time" name="outdoor-time" min="0" step="0.1" required>
+        <br><br>
+
+        <label for="posture">Posture Quality:</label>
+        <select id="posture" name="posture" required>
+            <option value="Good">Good</option>
+            <option value="Average">Average</option>
+            <option value="Poor">Poor</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        
+document.getElementById("lifestyle-form").addEventListener("submit", (event) => {
+    event.preventDefault(); 
+
+    const screenTime = parseFloat(document.getElementById("screen-time").value);
+    const outdoorTime = parseFloat(document.getElementById("outdoor-time").value);
+    const posture = document.getElementById("posture").value;
+
+    const lifestyleData = {
+        screenTime: screenTime,
+        outdoorTime: outdoorTime,
+        posture: posture
+    };
+
+    console.log("Collected Lifestyle Data:", lifestyleData);
+
+    fetch("/predict-risk", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(lifestyleData)
+    })
+        .then((response) => response.json())
+        .then((result) => {
+            alert(`Your Myopia Risk Score: ${result.riskScore}`);
+        })
+        .catch((error) => console.error("Error:", error));
+});
+
+    </script>
+</body>
+</html>
